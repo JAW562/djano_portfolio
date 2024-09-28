@@ -1,2 +1,2 @@
-# djano_portfolio
-My portfolio using Djano
+# django_portfolio
+My portfolio using Django
