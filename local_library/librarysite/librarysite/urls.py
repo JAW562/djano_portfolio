@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('catalogs/', include('catalog.urls')),
+    path('catalog/', include('catalog.urls')),
     path('', RedirectView.as_view(url = 'catalog/')),
 
 #Allows Django to serve static files like CSS and Javascript

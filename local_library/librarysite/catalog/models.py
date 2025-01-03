@@ -71,6 +71,12 @@ class Book(models.Model):
 
         return self.title
 
+
+    def display_genre(self):
+        return ','.join(genre.name for genre in self.genre.all()[:3])
+
+    display_genre.short_description = 'Genre'
+
     def get_absolute_url(self):
         
         """ Returns the URL to access a particualr instance of this model. """
@@ -125,7 +131,7 @@ class BookInstance(models.Model):
         
         """ String that represents the object in the Admin Site """
         #Makes a combination of the books ID and title. F strings are Format Strings, just makes it a bit easier to see what you're doing.
-        return f'{self.id} ({self.book.title})'
+        return f'{self.uniqueId} ({self.book.title})'
 
 
 class Author(models.Model):
